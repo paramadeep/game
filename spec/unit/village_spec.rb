@@ -1,15 +1,12 @@
-describe "a village" do
+describe "village" do
 
-  it "creates a valid village" do
-    my_village = Village.new(:row=>3,:column=>3,:lives_at=>[[2,2]])
-    expect(my_village.present).to eq [
-      [0,0,0],
-      [0,1,0],
-      [0,0,0]]
-  end
-
-  it "fails to create if lives at borders", :nice_to_have=>true do
-    expect{Village.new(:row=>3,:column=>3,:lives_at=>[[1,1],[2,3],[2,2]])}.to raise_error ""
+  it "on creation, instantiate and initialize the generations, size" do
+    generations_class = class_double("Generations").as_stubbed_const(:transfer_nested_constants => true)
+    generations = instance_double("Generations")
+    expect(generations_class).to receive(:new).with(no_args).and_return(generations)
+    expect(generations).to receive(:add_generation).with("a")
+    my_village = Village.new "a","b"
+    expect(my_village.instance_variable_get(:@area)).to eq "b"
   end
 
 end
