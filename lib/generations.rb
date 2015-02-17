@@ -11,7 +11,3 @@ class Generations
     @generations << generation
   end
 end
-
-class Generation < Layout 
-
-end
