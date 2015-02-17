@@ -1,7 +1,7 @@
-module Judgement 
+module Rules  
   extend self
-  def for state,lives_around
-    @rules[state].call(lives_around)
+  def for state
+    @rules[state]
   end
 
   private

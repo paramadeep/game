@@ -7,7 +7,7 @@ class Generations
     @generations.last
   end
 
-  def add_generation generation 
+  def present= generation
     @generations << generation
   end
 end

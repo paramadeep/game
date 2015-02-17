@@ -8,16 +8,20 @@ class Generation
     end
   end
 
+  def state_at *position
+    @two_d_array[position]
+  end
+
+  def lives_around *position
+    @two_d_array.surroundings_of(position).select{|pos| state_at(pos)==State.alive}.size
+  end
+
   def has_life_at *position
     @two_d_array[position]= State.alive
   end
 
-  def has_life? *position
-    @two_d_array[position] == State.alive
-  end
-
-  def is_dead? *position
-    @two_d_array[position] == State.dead
+  def print
+    @two_d_array.print
   end
 
   def self.containing area,live_positions 

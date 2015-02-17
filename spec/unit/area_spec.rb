@@ -7,4 +7,18 @@ describe Area do
 
   it "throws error when height and width is not positive integers", :nice_to_have => true do
   end
+
+  it "gives all inner cells" do
+    expect(Area.new(3,3).inner_cells).to eq [[1,1]]
+  end
+
+  it "gives all bounding cells" do
+    expect(Area.new(3,3).bounding_cells).to eq [
+      [0,0],[0,1],[0,2],
+      [1,0],      [1,2],
+      [2,0],[2,1],[2,2]
+    ]
+  end
+
+
 end

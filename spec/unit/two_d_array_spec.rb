@@ -4,7 +4,7 @@ describe "two_d_array" do
   two_d_array = []
 
   before(:each) do
-    array = [[1,2,3],[4,5,6]]
+    array = [[1,2,3],[4,5,6],[7,8,9],[10,11,12]]
     two_d_array = TwoDArray.new array
   end
 
@@ -26,4 +26,11 @@ describe "two_d_array" do
     expect(two_d_array[1,1]).to eq 10
   end
 
+  it "gives surrounding positions" do
+    expect(two_d_array.surroundings_of [2,1]).to eq [
+      [1,0],[1,1],[1,2],
+      [2,0],      [2,2],
+      [3,0],[3,1],[3,2]
+    ]
+  end
 end
