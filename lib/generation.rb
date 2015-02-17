@@ -9,11 +9,11 @@ class Generation
   end
 
   def has_life_at *position
-    @two_d_array[position]= State.life
+    @two_d_array[position]= State.alive
   end
 
   def has_life? *position
-    @two_d_array[position] == State.life
+    @two_d_array[position] == State.alive
   end
 
   def is_dead? *position

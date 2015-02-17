@@ -3,6 +3,7 @@ require_relative 'area'
 require_relative 'generations'
 require_relative 'generation'
 require_relative 'state'
+require_relative 'judgement'
 
 class Village 
 

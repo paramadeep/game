@@ -1,5 +1,5 @@
 class State 
-  def self.life
+  def self.alive
     '*'
   end
 
