@@ -11,19 +11,15 @@ class Village
     @generations = Generations.new
     @generations.present = Generation.containing area,live_positions
     @area = area
-    looks_like_this
+    @generations.present.print
   end
 
    def evolve
      new_generation = Judge.next_generation @generations.present,@area
      @generations.present = new_generation
-     looks_like_this
-   end
-
-   def looks_like_this
-     puts "Village now has this generation"
      @generations.present.print
    end
+
 end
 
 
