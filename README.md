@@ -33,4 +33,3 @@ If user gives lives at border, which is against the rules, should the game conti
 * Handle invalid input scenario
 * Surroundings for border items? the ripple effects
 * few unit tests 
-* Functional tests
