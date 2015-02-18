@@ -7,6 +7,25 @@ bundle install
 bundle exec rake spec
 ```
 
+To run it from irb
+inside lib/ folder
+```ruby
+require_relative 'village'
+
+my_village = Village.new Area.new(4,8),[[1,4],[2,3],[2,4]]
+#=> . . . . . . . .
+#=>. . . . * . . .
+#=>. . . * * . . .
+#=>. . . . . . . .
+my_village.evolve
+#=> . . . . . . . .
+#=>. . . * * . . .
+#=>. . . * * . . .
+#=>. . . . . . . .
+
+```
+
+
 ##Queries
 If user gives lives at border, which is against the rules, should the game continue by marking them dead, else should the game halt with execption
 
