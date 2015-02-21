@@ -36,7 +36,11 @@ class TwoDArray
     args = args.flatten
     offset = [args[0]-1,args[1]-1] 
     sorroundings = Area.new(3,3).bounding_cells
-    sorroundings.each_with_index {|position,index| sorroundings[index] = [position[0]+offset[0],position[1]+offset[1]] }
+    actual = sorroundings.each_with_index {|position,index| sorroundings[index] = [position[0]+offset[0],position[1]+offset[1]] }
+    negative_positions_removed = actual.select {|position| position[0] >= 0 && position[1] >=0 }
+    out_of_lenght_removed =  negative_positions_removed.select do |position| 
+      position[0] < @array.size && position[1] < @array[0].size 
+    end
   end
 
 end

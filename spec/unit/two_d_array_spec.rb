@@ -33,4 +33,18 @@ describe "two_d_array" do
       [3,0],[3,1],[3,2]
     ]
   end
+
+  it "gives surrounding positions have negative positions removed" do
+    expect(two_d_array.surroundings_of [0,0]).to eq [
+            [0,1],
+      [1,0],[1,1]]
+  end
+
+ it "gives surrounding positions have out of length positions removed" do
+    expect(two_d_array.surroundings_of [3,2]).to eq [
+      [2,1],[2,2],
+      [3,1]       ]
+  end
+
+
 end
