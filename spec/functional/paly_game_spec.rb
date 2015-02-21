@@ -39,5 +39,3 @@ describe "The Game" do
 
 
 end
-
-

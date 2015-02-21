@@ -2,7 +2,7 @@ module Judge
   extend self
 
   def next_generation input_generation,area
-    live_positions  = area.all_cells.select do |position| 
+    live_positions  = area.all_positions.select do |position| 
       judgement = judgement_for input_generation.state_at(position),input_generation.lives_around(position) 
       judgement.eql? State.alive
     end

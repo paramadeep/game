@@ -5,20 +5,20 @@ class Area
     @height = height
   end
 
-  def bounding_cells
-    all_cells.select do |cell|
-      [0,width-1].include?(cell[0]) || [0,height-1].include?(cell[1])
+  def bounding_positions
+    all_positions.select do |position|
+      [0,width-1].include?(position[0]) || [0,height-1].include?(position[1])
     end
   end
 
-  def inner_cells
-    all_cells - bounding_cells
+  def inner_positions
+    all_positions - bounding_positions
   end
 
-  def all_cells
-    cells = []
-    total_cells = @width.times {|x| @height.times {|y|cells << [x,y]}}
-    return cells
+  def all_positions
+    positions = []
+    total_positions = @width.times {|x| @height.times {|y|positions << [x,y]}}
+    return positions
   end
 end
 
